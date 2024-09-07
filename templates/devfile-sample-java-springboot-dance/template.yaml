@@ -29,11 +29,10 @@ spec:
           title: Owner
           type: string
           description: Owner of the component
-          default: user:guest
           ui:field: OwnerPicker
           ui:options:
             catalogFilter:
-              kind: [Group, User]
+              kind: User
     - title: Application Repository Information
       required:
         - hostType
