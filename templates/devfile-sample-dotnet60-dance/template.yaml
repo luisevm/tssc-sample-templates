@@ -206,17 +206,17 @@ spec:
         protectDefaultBranch: false
         repoVisibility: "public"
     # This action creates a new GitLab repository and publishes the files in the workspace directory to the repository.
-    - id: publish-gitlab
-      name: Publish Repository to GitLab
-      action: publish:gitlab
-      if: ${{ parameters.hostType === 'GitLab' }}
-      input:
-        allowedHosts: [ '${{ parameters.gitlabServer }}' ]
-        description: This is ${{ parameters.name }}
-        repoUrl: ${{ parameters.gitlabServer }}?owner=${{ parameters.repoOwner }}&repo=${{ parameters.repoName }}
-        defaultBranch: ${{ parameters.branch }}
-        protectDefaultBranch: false
-        repoVisibility: "public"
+    #- id: publish-gitlab
+    #  name: Publish Repository to GitLab
+    #  action: publish:gitlab
+    #  if: ${{ parameters.hostType === 'GitLab' }}
+    #  input:
+    #    allowedHosts: [ '${{ parameters.gitlabServer }}' ]
+    #    description: This is ${{ parameters.name }}
+    #    repoUrl: ${{ parameters.gitlabServer }}?owner=${{ parameters.repoOwner }}&repo=${{ parameters.repoName }}
+    #    defaultBranch: ${{ parameters.branch }}
+    #    protectDefaultBranch: false
+    #    repoVisibility: "public"
     # The final step is to register our new component in the catalog.
     - id: fetch-gitops-skeleton
       name: Fetch Gitops Skeleton
@@ -306,18 +306,18 @@ spec:
         protectDefaultBranch: false
         repoVisibility: "public"
     # This action creates a new GitLab repository and publishes the files in the workspace directory to the repository.
-    - id: publish-gitlab-gitops
-      name: Publish GitOps Repository to GitLab
-      action: publish:gitlab
-      if: ${{ parameters.hostType === 'GitLab' }}
-      input:
-        sourcePath: gitops
-        allowedHosts: ['${{ parameters.gitlabServer }}']
-        description: This is GitOps repository for ${{ parameters.name }}
-        repoUrl:  ${{ parameters.gitlabServer }}?owner=${{ parameters.repoOwner }}&repo=${{ parameters.repoName }}-gitops
-        defaultBranch: "main"
-        protectDefaultBranch: false
-        repoVisibility: "public"
+    #- id: publish-gitlab-gitops
+    #  name: Publish GitOps Repository to GitLab
+    #  action: publish:gitlab
+    #  if: ${{ parameters.hostType === 'GitLab' }}
+    #  input:
+    #    sourcePath: gitops
+    #    allowedHosts: ['${{ parameters.gitlabServer }}']
+    #    description: This is GitOps repository for ${{ parameters.name }}
+    #    repoUrl:  ${{ parameters.gitlabServer }}?owner=${{ parameters.repoOwner }}&repo=${{ parameters.repoName }}-gitops
+    #    defaultBranch: "main"
+    #    protectDefaultBranch: false
+    #    repoVisibility: "public"
     - id: wait-for-github-repository
       name: Waiting for repository availability
       action: 'debug:wait'
