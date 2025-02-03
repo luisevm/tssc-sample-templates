@@ -341,7 +341,7 @@ spec:
       input:
         appName: ${{ parameters.name }}-app-of-apps
         # name set in rhdh config
-        argoInstance: default
+        argoInstance: openshift-gitops
         namespace: rhtap
         repoUrl: https://${{ parameters.githubServer if parameters.hostType === 'GitHub' else parameters.gitlabServer }}/${{ parameters.repoOwner }}/${{ parameters.repoName }}-gitops.git
         path: './app-of-apps'
